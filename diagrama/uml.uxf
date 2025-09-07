@@ -1,0 +1,74 @@
+<diagram program="umletino" version="15.1"><zoom_level>3</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>605</x><y>243</y><w>63</w><h>57</h></coordinates><panel_attributes>&lt;&lt;Interfcae&gt;&gt;
+Usuário
+--
+-id: Long
+-username: String
+-password: String
+--
+-login()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>551</x><y>336</y><w>63</w><h>57</h></coordinates><panel_attributes>Cliente
+--
+-rg: String
+-cpf: String
+-nome: String
+-endereco: String
+-profissao: String
+-empregador: List&lt;String&gt;
+-rendimentosAuferidos: int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>665</x><y>336</y><w>63</w><h>57</h></coordinates><panel_attributes>Agente
+--
+
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>632</x><y>297</y><w>9</w><h>24</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>572</x><y>309</y><w>135</w><h>33</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;90;10;20;430;20;430;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>431</x><y>246</y><w>99</w><h>81</h></coordinates><panel_attributes>PedidoAluguel
+--
+-id: Long
+-preco: foat
+-dataInicio: LocalDate
+-dataEntrega: LocalDate
+-isExecutado: Executado
+-tipoContrato: TipoContrato
+--
+-criarPedido(pedido: Pedido, idUsuario: Long):Codigo
+-alterarPedido(id: Long, idUsuario: Long):Codigo
+-consultarPedido(id: Long, idUsuario: Long):Pedido
+-cancelarPedido(id: Long, idUsuario: Long):Codigo
+-avaliarPedido(id: Long, idUsuario: Long):Codigo</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>323</x><y>195</y><w>63</w><h>57</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+Executado
+--
++ PENDENTE
++ AVALIADO
++ REJEITADO
++ APROVADO
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>254</x><y>273</y><w>63</w><h>57</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+TipoContrato
+--
++ CLIENTES
++ EMPRESAS
++ BANCO
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>363</y><w>66</w><h>51</h></coordinates><panel_attributes>Automovel
+--
+-matricula: Long
+-ano: int
+-marca: String
+-modelo: String
+-placa: String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>366</y><w>66</w><h>51</h></coordinates><panel_attributes>ContratoCredito
+--
+-id: Long
+-quantidadeCredito: int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>467</x><y>324</y><w>15</w><h>48</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=0..1
+</panel_attributes><additional_attributes>10;10;10;140</additional_attributes></element><element><id>Relation</id><coordinates><x>314</x><y>294</y><w>123</w><h>9</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>390;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>249</y><w>87</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>270;100;10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>324</y><w>117</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=1
+</panel_attributes><additional_attributes>360;10;360;80;10;80;10;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>446</x><y>159</y><w>63</w><h>57</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+Codigo
+--
++ 200_OK
++ 400_UNAUTHORIZED
++ 505_ERROR
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>479</x><y>213</y><w>9</w><h>39</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>527</x><y>258</y><w>84</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;80;180;80;180;10;260;10</additional_attributes></element></diagram>
