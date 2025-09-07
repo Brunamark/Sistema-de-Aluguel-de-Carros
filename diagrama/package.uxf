@@ -1,0 +1,18 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>90</x><y>120</y><w>140</w><h>70</h></coordinates><panel_attributes>Veiculo
+--
+-Automovel
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>420</x><y>130</y><w>140</w><h>70</h></coordinates><panel_attributes>Locacao
+--
+-PedidoAluguel
+-ContratoCredito
+-
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>210</x><y>360</y><w>140</w><h>70</h></coordinates><panel_attributes>Usuario
+--
+-Cliente
+-Agentes
+bg=gray
+fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>190</y><w>240</w><h>210</h></coordinates><panel_attributes>lt=&lt;..
+&lt;&lt;access&gt;&gt;</panel_attributes><additional_attributes>220;10;220;100;10;100;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>150</y><w>220</w><h>40</h></coordinates><panel_attributes>lt=&lt;..
+&lt;&lt;access&gt;&gt;</panel_attributes><additional_attributes>10;20;200;20</additional_attributes></element></diagram>
