@@ -1,0 +1,226 @@
+<diagram program="umletino" version="15.1"><zoom_level>1</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLPackage</id><coordinates><x>229</x><y>332</y><w>194</w><h>109</h></coordinates><panel_attributes>DTO
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>290</x><y>240</y><w>127</w><h>84</h></coordinates><panel_attributes>Model
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>309</x><y>471</y><w>65</w><h>49</h></coordinates><panel_attributes>View
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>435</x><y>429</y><w>100</w><h>78</h></coordinates><panel_attributes>Service
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>277</y><w>33</w><h>27</h></coordinates><panel_attributes>PedidoAluguel
+--
+-id: Long
+-preco: foat
+-dataInicio: LocalDate
+-dataEntrega: LocalDate
+-isExecutado: Executado
+-tipoContrato: TipoContrato
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>436</x><y>345</y><w>116</w><h>71</h></coordinates><panel_attributes>Mapper
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>240</x><y>346</y><w>91</w><h>70</h></coordinates><panel_attributes>Request
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>341</x><y>345</y><w>77</w><h>72</h></coordinates><panel_attributes>Response
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>436</x><y>238</y><w>92</w><h>89</h></coordinates><panel_attributes>Controller
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>354</x><y>298</y><w>21</w><h>19</h></coordinates><panel_attributes>Executado
+--
+-id: Long
+-name: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>383</x><y>246</y><w>21</w><h>19</h></coordinates><panel_attributes>TipoContrato
+--
+-id: Long
+-name: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>384</x><y>276</y><w>22</w><h>17</h></coordinates><panel_attributes>Automovel
+--
+-id: Long
+-matricula: Long
+-ano: int
+-marca: String
+-modelo: String
+-placa: String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>353</x><y>276</y><w>22</w><h>17</h></coordinates><panel_attributes>ContratoCredito
+--
+-id: Long
+-quantidadeCredito: int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>444</x><y>250</y><w>36</w><h>14</h></coordinates><panel_attributes>Cliente
+--
+
+--
++ criarCliente(clienteRequest:ClienteRequest): HttpResponse
++ getClienteByid(id: Long): HttpResponse
++ getClientes(): HtppResponse
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>486</x><y>250</y><w>36</w><h>14</h></coordinates><panel_attributes>Agente
+--
+
+--
++ criarAgente(agenteRequest:ClienteRequest): HttpResponse
++ getAgenteById(id: Long): HttpResponse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>312</x><y>246</y><w>21</w><h>22</h></coordinates><panel_attributes>Cliente
+--
+-id: Long
+-username: String
+-password: String
+-rg: String
+-cpf: String
+-nome: String
+-endereco: String
+-profissao: String
+-empregador: String
+-rendimentosAuferidos: int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>350</x><y>246</y><w>21</w><h>19</h></coordinates><panel_attributes>Agente
+--
+-id: Long
+-username: String
+-password: String
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>444</x><y>274</y><w>35</w><h>17</h></coordinates><panel_attributes>Automovel
+--
+
+--
++ criarAutomovel(): HttpResponse
++ getAutomovelById(id: UUID): HttpResponse
++ getAutomovelByName(name: String): HttpResponse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>487</x><y>274</y><w>38</w><h>27</h></coordinates><panel_attributes>PedidoAluguel
+--
+--
+-criarPedido(pedido: Pedido, idUsuario: Long):HttpResponse
+-alterarPedido(id: Long, idUsuario: Long):HttpResponse
+-consultarPedidoById(id: Long, idUsuario: Long):HttpResponse
+-avaliarPedido(id: Long, idUsuario: Long):HttpResponse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>357</y><w>36</w><h>14</h></coordinates><panel_attributes>Cliente
+--
+
+--
++ toResponse(cliente: Cliente): ClienteResponse
++ toEntity(clienteRequest: ClienteRequest): Cliente
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>487</x><y>357</y><w>36</w><h>14</h></coordinates><panel_attributes>Agente
+--
+
+--
++ toResponse(agente: Agente): AgenteResponse
++ toEntity(agenteRequest: AgenteRequest): Agente
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>441</x><y>379</y><w>36</w><h>14</h></coordinates><panel_attributes>Automovel
+--
+
+--
++ toResponse(automovel: Automovel): AutomovelResponse
++ toEntity(automovelRequest: AutomovelRequest): Automovel
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>488</x><y>379</y><w>45</w><h>14</h></coordinates><panel_attributes>PedidoAluguel
+--
+
+--
++ toResponse(pedidoAluguel: PedidoAluguel): PedidoAluguelResponse
++ toEntity(pedidoAluguelRequest: PedidoAluguelRequest): PedidoAluguel
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>244</x><y>353</y><w>21</w><h>22</h></coordinates><panel_attributes>Cliente
+--
+-id: Long
+-username: String
+-password: String
+-rg: String
+-cpf: String
+-nome: String
+-endereco: String
+-profissao: String
+-empregador: String
+-rendimentosAuferidos: int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>271</x><y>355</y><w>21</w><h>19</h></coordinates><panel_attributes>Agente
+--
+-id: Long
+-username: String
+-password: String
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>357</y><w>22</w><h>17</h></coordinates><panel_attributes>Automovel
+--
+-id: Long
+-matricula: Long
+-ano: int
+-marca: String
+-modelo: String
+-placa: String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>245</x><y>382</y><w>33</w><h>27</h></coordinates><panel_attributes>PedidoAluguel
+--
+-id: Long
+-preco: foat
+-dataInicio: LocalDate
+-dataEntrega: LocalDate
+-isExecutado: Executado
+-tipoContrato: TipoContrato
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>346</x><y>355</y><w>21</w><h>22</h></coordinates><panel_attributes>Cliente
+--
+-id: Long
+-username: String
+-password: String
+-rg: String
+-cpf: String
+-nome: String
+-endereco: String
+-profissao: String
+-empregador: String
+-rendimentosAuferidos: int
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>378</x><y>357</y><w>21</w><h>19</h></coordinates><panel_attributes>Agente
+--
+-id: Long
+-username: String
+-password: String
+
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>346</x><y>383</y><w>33</w><h>27</h></coordinates><panel_attributes>PedidoAluguel
+--
+-id: Long
+-preco: foat
+-dataInicio: LocalDate
+-dataEntrega: LocalDate
+-isExecutado: Executado
+-tipoContrato: TipoContrato
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>384</x><y>386</y><w>22</w><h>17</h></coordinates><panel_attributes>Automovel
+--
+-id: Long
+-matricula: Long
+-ano: int
+-marca: String
+-modelo: String
+-placa: String
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>440</x><y>439</y><w>36</w><h>14</h></coordinates><panel_attributes>Cliente
+--
+
+--
++ criarCliente(clienteRequest:ClienteRequest): HttpResponse
++ getClienteByid(id: Long): HttpResponse
++ getClientes(): HtppResponse
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>485</x><y>440</y><w>36</w><h>14</h></coordinates><panel_attributes>Agente
+--
+
+--
++ criarAgente(agenteRequest:ClienteRequest): HttpResponse
++ getAgenteById(id: Long): HttpResponse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>442</x><y>469</y><w>35</w><h>17</h></coordinates><panel_attributes>Automovel
+--
+
+--
++ criarAutomovel(): HttpResponse
++ getAutomovelById(id: UUID): HttpResponse
++ getAutomovelByName(name: String): HttpResponse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>485</x><y>466</y><w>38</w><h>27</h></coordinates><panel_attributes>PedidoAluguel
+--
+--
+-criarPedido(pedido: Pedido, idUsuario: Long):HttpResponse
+-alterarPedido(id: Long, idUsuario: Long):HttpResponse
+-consultarPedidoById(id: Long, idUsuario: Long):HttpResponse
+-avaliarPedido(id: Long, idUsuario: Long):HttpResponse</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>426</x><y>520</y><w>145</w><h>97</h></coordinates><panel_attributes>Repository
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>587</x><y>266</y><w>220</w><h>206</h></coordinates><panel_attributes>Exception
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>714</x><y>284</y><w>86</w><h>73</h></coordinates><panel_attributes>Cliente
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>609</x><y>285</y><w>86</w><h>73</h></coordinates><panel_attributes>Agente
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>609</x><y>366</y><w>86</w><h>73</h></coordinates><panel_attributes>Automovel
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>713</x><y>368</y><w>86</w><h>73</h></coordinates><panel_attributes>PedidoAluguel
+--
+bg=black</panel_attributes><additional_attributes></additional_attributes></element></diagram>
