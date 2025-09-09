@@ -1,18 +1,22 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>90</x><y>120</y><w>140</w><h>70</h></coordinates><panel_attributes>Veiculo
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>600</x><y>140</y><w>140</w><h>70</h></coordinates><panel_attributes>Domain
 --
--Automovel
++model
++enum
 bg=gray
-fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>420</x><y>130</y><w>140</w><h>70</h></coordinates><panel_attributes>Locacao
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>130</x><y>120</y><w>140</w><h>70</h></coordinates><panel_attributes>Infrastructure
 --
--PedidoAluguel
--ContratoCredito
--
-bg=gray
-fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>210</x><y>360</y><w>140</w><h>70</h></coordinates><panel_attributes>Usuario
++repository
+
+bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>120</x><y>360</y><w>140</w><h>70</h></coordinates><panel_attributes>Application
 --
--Cliente
--Agentes
-bg=gray
-fg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>190</y><w>240</w><h>210</h></coordinates><panel_attributes>lt=&lt;..
-&lt;&lt;access&gt;&gt;</panel_attributes><additional_attributes>220;10;220;100;10;100;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>150</y><w>220</w><h>40</h></coordinates><panel_attributes>lt=&lt;..
-&lt;&lt;access&gt;&gt;</panel_attributes><additional_attributes>10;20;200;20</additional_attributes></element></diagram>
++service
++dto
++sapper
+bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>600</x><y>360</y><w>140</w><h>70</h></coordinates><panel_attributes>Presentation
+--
++controller
+bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>600</x><y>560</y><w>140</w><h>70</h></coordinates><panel_attributes>Resources
+--
++swagger
+
+bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>400</y><w>370</w><h>30</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;350;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>180</y><w>30</w><h>220</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>200</y><w>450</w><h>200</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>430;10;430;110;10;110;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>420</y><w>30</w><h>180</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element></diagram>
