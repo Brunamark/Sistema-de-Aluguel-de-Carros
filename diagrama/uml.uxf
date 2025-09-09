@@ -12,7 +12,7 @@ Usuário
 -nome: String
 -endereco: String
 -profissao: String
--empregador: List&lt;String&gt;
+-empregador: String
 -rendimentosAuferidos: int
 --
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>959</x><y>413</y><w>147</w><h>133</h></coordinates><panel_attributes>Agente
@@ -54,10 +54,11 @@ TipoContrato
 -modelo: String
 -placa: String
 --
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>434</x><y>483</y><w>154</w><h>119</h></coordinates><panel_attributes>ContratoCredito
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>434</x><y>483</y><w>154</w><h>119</h></coordinates><panel_attributes>Contrato
 --
 -id: Long
 -quantidadeCredito: int
+-tipoContrato: TipoContrato
 --
 </panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>497</x><y>385</y><w>35</w><h>112</h></coordinates><panel_attributes>lt=-
 m1=1
@@ -71,4 +72,13 @@ Codigo
 + 200_OK
 + 400_UNAUTHORIZED
 + 505_ERROR
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>525</x><y>126</y><w>21</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>637</x><y>231</y><w>196</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;80;180;80;180;10;260;10</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>525</x><y>126</y><w>21</w><h>91</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>637</x><y>231</y><w>196</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;80;180;80;180;10;260;10</additional_attributes></element><element><id>Relation</id><coordinates><x>574</x><y>385</y><w>133</w><h>112</h></coordinates><panel_attributes>lt=-
+m1=0..n
+m2=1
+</panel_attributes><additional_attributes>10;10;10;80;120;80;120;130;170;130</additional_attributes></element><element><id>UMLClass</id><coordinates><x>441</x><y>686</y><w>147</w><h>133</h></coordinates><panel_attributes>&lt;&lt;Enum&gt;&gt;
+TipoContrato
+--
++SIMPLES
++CREDITO
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>497</x><y>595</y><w>21</w><h>105</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element></diagram>
