@@ -1,0 +1,52 @@
+package com.aluguel_carros.sistema.infrastructure.entity;
+
+import com.aluguel_carros.sistema.domain.enums.Role;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import java.util.UUID;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "users")
+public class User {
+
+    @Id
+    @GeneratedValue( strategy = GenerationType.SEQUENCE)
+    private Long id;
+
+    @Email
+    @NotBlank
+    @Column(nullable = false)
+    private String username;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String password;
+
+    @NotNull
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    private String name;
+
+    private String cpf;
+
+    private String rg;
+
+    private String address;
+
+    private String profession;
+
+    private String employer;
+
+    private int incomeEarned;
+
+
+}
