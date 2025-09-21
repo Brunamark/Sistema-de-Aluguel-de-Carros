@@ -1,0 +1,13 @@
+components:
+  schemas:
+    Contract:
+      type: object
+      required:
+        - creditQuantity
+        - contractType
+      properties:
+        creditQuantity:
+          type: integer
+        contractType:
+          type: string
+          enum: [ SIMPLE, CREDIT ]

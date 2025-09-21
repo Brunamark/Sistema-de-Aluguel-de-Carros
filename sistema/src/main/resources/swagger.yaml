@@ -1,0 +1,113 @@
+openapi: 3.0.1
+info:
+  title: Sistema de carro
+  version: 1.0.0
+paths:
+  /rent-request:
+    post:
+      tags:
+        - PedidosAluguel
+      operationId: createRentRequest
+      summary: Creates a request rent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './dtos/request/rent-request.yaml#/components/schemas/RentRequest'
+      responses:
+        '201':
+          description: Car was created
+          content:
+            application/json:
+              schema:
+                $ref: './dtos/response/rent-request.yaml#/components/schemas/RentRequestResponse'
+        '400':
+          description: Invalid input data
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+
+  /rent-request/{id}:
+    get:
+      tags:
+        - PedidosAluguel
+      operationId: getRentRequest
+      summary: Get a rent request by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: './dtos/response/rent-request.yaml#/components/schemas/RentRequestResponse'
+        '404':
+          description: Rent request not found
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+
+    put:
+      tags:
+        - PedidosAluguel
+      operationId: updateRentRequest
+      summary: Update an existing rent request
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './dtos/request/rent-request-update.yaml#/components/schemas/RentRequestUpdate'
+      responses:
+        '200':
+          description: Rent request updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: './dtos/response/rent-request.yaml#/components/schemas/RentRequestResponse'
+        '400':
+          description: Invalid input data
+        '404':
+          description: Rent request not found
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+    delete:
+      tags:
+        - PedidosAluguel
+      operationId: deleteRentRequest
+      summary: Delete a rent request
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Rent request deleted successfully
+        '404':
+          description: Rent request not found
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+

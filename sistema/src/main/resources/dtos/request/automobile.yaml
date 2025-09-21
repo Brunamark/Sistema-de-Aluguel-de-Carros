@@ -1,0 +1,21 @@
+components:
+  schemas:
+    Automobile:
+      type: object
+      required:
+        - registration
+        - registrationPlate
+        - brand
+        - model
+        - year
+      properties:
+        registration:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+        registrationPlate:
+          type: string
+        year:
+          type: integer

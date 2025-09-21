@@ -1,0 +1,39 @@
+components:
+  schemas:
+    RentRequest:
+      type: object
+      required:
+        - userId
+        - contractId
+        - automobileId
+        - price
+        - startDate
+        - endDate
+        - executed
+        - requestType
+      properties:
+        userId:
+          type: integer
+          format: int64
+        contractId:
+          type: integer
+          format: int64
+        automobileId:
+          type: integer
+          format: int64
+        price:
+          type: number
+          format: float
+          minimum: 10
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        executed:
+          type: string
+          enum: [PENDING, EVALUATED, REJECTED, APPROVED]
+        requestType:
+          type: string
+          enum: [CLIENTS, BANKS, ENTERPRISE]

@@ -1,0 +1,38 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: "Identificador único do usuário"
+        username:
+          type: string
+          format: email
+          description: "Email do usuário (usado como nome de usuário)"
+        role:
+          type: string
+          enum: [ CLIENT, AGENT ]
+          description: "Função do usuário no sistema"
+        name:
+          type: string
+          description: "Nome completo do usuário"
+        cpf:
+          type: string
+          description: "CPF do usuário"
+        rg:
+          type: string
+          description: "RG do usuário"
+        address:
+          type: string
+          description: "Endereço completo do usuário"
+        profession:
+          type: string
+          description: "Profissão do usuário"
+        employer:
+          type: string
+          description: "Empregador atual do usuário"
+        incomeEarned:
+          type: integer
+          description: "Renda mensal do usuário em reais"
