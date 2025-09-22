@@ -110,4 +110,36 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
-
+    patch:
+      tags:
+        - PedidosAluguel
+      operationId: updateRentRequestStatus
+      summary: Update only the status of a rent request
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './dtos/request/rent-request-status-update.yaml#/components/schemas/RentRequestStatusUpdate'
+      responses:
+        '200':
+          description: Rent request status updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: './dtos/response/rent-request.yaml#/components/schemas/RentRequestResponse'
+        '400':
+          description: Invalid status value
+        '404':
+          description: Rent request not found
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden

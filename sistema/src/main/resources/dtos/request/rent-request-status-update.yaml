@@ -1,0 +1,16 @@
+components:
+  schemas:
+    RentRequestStatusUpdate:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum:
+            - PENDING
+            - APPROVED
+            - REJECTED
+            - CANCELED
+            - COMPLETED
+          description: The new status of the rent request

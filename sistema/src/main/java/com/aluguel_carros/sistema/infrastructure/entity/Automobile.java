@@ -1,15 +1,24 @@
 package com.aluguel_carros.sistema.infrastructure.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(name="automobile")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Automobile {
 
     @Id
     @GeneratedValue( strategy = GenerationType.SEQUENCE)
     private Long id;
+
+    @OneToMany(mappedBy = "automobile")
+    private List<RentRequest> rentRequests;
 
     @Column(nullable = false)
     private String registration;

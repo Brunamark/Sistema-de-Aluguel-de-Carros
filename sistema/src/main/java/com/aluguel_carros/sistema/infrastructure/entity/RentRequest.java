@@ -1,16 +1,19 @@
 package com.aluguel_carros.sistema.infrastructure.entity;
 
-import ch.qos.logback.core.net.server.Client;
 import com.aluguel_carros.sistema.domain.enums.Executed;
 import com.aluguel_carros.sistema.domain.enums.RequestType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
+@Table(name="rent_request")
+@NoArgsConstructor
+@AllArgsConstructor
 public class RentRequest {
 
     @Id
@@ -18,18 +21,17 @@ public class RentRequest {
     private Long id;
 
     @ManyToOne
-    @Column(nullable = false)
     @JoinColumn(name = "user_id")
+    @NotNull
     private User user;
 
-    @OneToOne
-    @Column(nullable = false)
-    @JoinColumn(name = "contract_id")
+    @OneToOne(mappedBy = "rentRequest")
+    @NotNull
     private Contract contract;
 
     @ManyToOne
-    @Column(nullable = false)
     @JoinColumn(name = "automobile_id")
+    @NotNull
     private Automobile automobile;
 
     @Column(nullable = false)

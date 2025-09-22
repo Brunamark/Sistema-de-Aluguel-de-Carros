@@ -9,7 +9,6 @@ components:
         - price
         - startDate
         - endDate
-        - executed
         - requestType
       properties:
         userId:
@@ -31,9 +30,6 @@ components:
         endDate:
           type: string
           format: date
-        executed:
-          type: string
-          enum: [PENDING, EVALUATED, REJECTED, APPROVED]
         requestType:
           type: string
           enum: [CLIENTS, BANKS, ENTERPRISE]
