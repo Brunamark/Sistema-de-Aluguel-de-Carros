@@ -12,6 +12,7 @@ import com.sistema_aluguel.model.RentRequestUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import com.aluguel_carros.sistema.infrastructure.mapper.RentRequestMappper;
 
 @Controller
 public class RentRequestController implements PedidosAluguelApi {
@@ -22,20 +23,30 @@ public class RentRequestController implements PedidosAluguelApi {
     private AutomobileService automobileService;
     @Autowired
     private ContractService contractService;
+    @Autowired
+    private RentRequestMappper rentRequestMappper;
 
     @Override
     public ResponseEntity<RentRequestResponse> createRentRequest(RentRequest rentRequest) {
-        return null;
+        rentRequestService.createRentRequest(rentRequest);
+        return ResponseEntity.ok();
+
     }
 
     @Override
     public ResponseEntity<Void> deleteRentRequest(Long id) {
-        return null;
+
+        rentRequestService.deleteRentRequest(id);
+        return ResponseEntity.ok();
+
     }
 
     @Override
     public ResponseEntity<RentRequestResponse> getRentRequest(Long id) {
-        return null;
+
+        var rentRequest = rentRequestService.getRentRequestById(id);
+        return ResponseEntity.ok().body(rentRequestMappper.toResponse(rentRequest));
+
     }
 
     @Override
@@ -50,13 +61,16 @@ public class RentRequestController implements PedidosAluguelApi {
         rentRequest.setStartDate(rentRequestUpdate.getStartDate());
         rentRequest.setEndDate(rentRequestUpdate.getEndDate());
 
-        var
+        rentRequest = rentRequestService.updateRentRequest(rentRequest);
 
-        return ResponseEntity.ok().body(rentRequestService.updateRentRequest(rentRequest);
+        return ResponseEntity.ok().body(rentRequestMappper.toResponse(rentRequest));
     }
 
     @Override
     public ResponseEntity<RentRequestResponse> updateRentRequestStatus(Long id, RentRequestStatusUpdate rentRequestStatusUpdate) {
-        return null;
+        var rentRequest = rentRequestService.getRentRequestById(id);
+
+
+        return ResponseEntity.ok().body(rentRequestMappper.toResponse(rentRequest));
     }
 }
