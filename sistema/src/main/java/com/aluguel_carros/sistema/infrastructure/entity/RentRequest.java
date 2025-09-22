@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -14,6 +16,8 @@ import java.time.LocalDate;
 @Table(name="rent_request")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class RentRequest {
 
     @Id

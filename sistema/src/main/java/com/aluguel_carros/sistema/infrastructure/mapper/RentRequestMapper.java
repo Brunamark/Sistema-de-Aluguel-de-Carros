@@ -1,7 +1,7 @@
 package com.aluguel_carros.sistema.infrastructure.mapper;
 
 import com.aluguel_carros.sistema.domain.dto.RentRequestDTO;
-import com.sistema_aluguel.model.RentRequest;
+import com.aluguel_carros.sistema.infrastructure.entity.RentRequest;
 import com.sistema_aluguel.model.RentRequestResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
