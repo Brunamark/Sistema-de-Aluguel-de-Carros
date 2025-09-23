@@ -28,7 +28,7 @@ public class Automobile {
     private String registration;
 
     @Column(nullable = false)
-    private int year;
+    private Integer year;
 
     @Column(nullable = false)
     private String brand;

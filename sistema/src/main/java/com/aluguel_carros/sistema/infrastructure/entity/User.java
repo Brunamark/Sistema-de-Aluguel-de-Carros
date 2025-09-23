@@ -53,7 +53,7 @@ public class User {
 
     private String employer;
 
-    private int incomeEarned;
+    private Integer  incomeEarned;
 
 
 }

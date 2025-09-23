@@ -3,12 +3,20 @@ info:
   title: Sistema de carro
   version: 1.0.0
 paths:
-  /rent-request:
+  /rent-request/{userId}:
     post:
       tags:
         - PedidosAluguel
       operationId: createRentRequest
       summary: Creates a request rent
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: ID do usuário que está criando a solicitação
+          schema:
+            type: integer
+            format: int64
       requestBody:
         required: true
         content:
@@ -29,13 +37,20 @@ paths:
         '403':
           description: Forbidden
 
-  /rent-request/{id}:
+  /rent-request/{userId}/{id}:
     get:
       tags:
         - PedidosAluguel
       operationId: getRentRequest
       summary: Get a rent request by ID
       parameters:
+        - name: userId
+          in: path
+          required: true
+          description: ID do usuário que está criando a solicitação
+          schema:
+            type: integer
+            format: int64
         - name: id
           in: path
           required: true
@@ -62,6 +77,13 @@ paths:
       operationId: updateRentRequest
       summary: Update an existing rent request
       parameters:
+        - name: userId
+          in: path
+          required: true
+          description: ID do usuário que está criando a solicitação
+          schema:
+            type: integer
+            format: int64
         - name: id
           in: path
           required: true
@@ -95,6 +117,14 @@ paths:
       operationId: deleteRentRequest
       summary: Delete a rent request
       parameters:
+        - name: userId
+          in: path
+          required: true
+          description: ID do usuário que está criando a solicitação
+          schema:
+            type: integer
+            format: int64
+
         - name: id
           in: path
           required: true
@@ -116,6 +146,13 @@ paths:
       operationId: updateRentRequestStatus
       summary: Update only the status of a rent request
       parameters:
+        - name: userId
+          in: path
+          required: true
+          description: ID do usuário que está criando a solicitação
+          schema:
+            type: integer
+            format: int64
         - name: id
           in: path
           required: true

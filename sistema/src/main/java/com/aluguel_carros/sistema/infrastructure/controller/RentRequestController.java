@@ -2,10 +2,13 @@ package com.aluguel_carros.sistema.infrastructure.controller;
 
 
 import com.aluguel_carros.sistema.domain.enums.Executed;
+import com.aluguel_carros.sistema.domain.enums.Role;
 import com.aluguel_carros.sistema.domain.service.AutomobileService;
 import com.aluguel_carros.sistema.domain.service.ContractService;
 import com.aluguel_carros.sistema.domain.service.RentRequestService;
+import com.aluguel_carros.sistema.domain.service.UserService;
 import com.aluguel_carros.sistema.infrastructure.exception.RentRequestException;
+import com.aluguel_carros.sistema.infrastructure.exception.UnauthorizedException;
 import com.sistema_aluguel.api.PedidosAluguelApi;
 import com.sistema_aluguel.model.RentRequest;
 import com.sistema_aluguel.model.RentRequestResponse;
@@ -26,10 +29,16 @@ public class RentRequestController implements PedidosAluguelApi {
     @Autowired
     private ContractService contractService;
     @Autowired
+    private UserService userService;
+    @Autowired
     private RentRequestMapper rentRequestMapper;
 
     @Override
-    public ResponseEntity<RentRequestResponse> createRentRequest(RentRequest rentRequest) {
+    public ResponseEntity<RentRequestResponse> createRentRequest(Long userId, RentRequest rentRequest) {
+        var user = userService.getUserById(userId);
+        if(!user.getRole().equals(Role.CLIENT)){
+            throw new UnauthorizedException("Usuário não pode criar um pedido de aluguel");
+        }
         var rentRequestEntity = rentRequestMapper.toDomain(rentRequest);
         rentRequestService.createRentRequest(rentRequestEntity);
         return ResponseEntity.ok().build();
@@ -37,21 +46,33 @@ public class RentRequestController implements PedidosAluguelApi {
     }
 
     @Override
-    public ResponseEntity<Void> deleteRentRequest(Long id) {
+    public ResponseEntity<Void> deleteRentRequest(Long userId, Long id) {
+        var user = userService.getUserById(userId);
+        if(!user.getRole().equals(Role.CLIENT)){
+            throw new UnauthorizedException("Usuário não pode criar um pedido de aluguel");
+        }
         rentRequestService.deleteRentRequest(id);
         return ResponseEntity.ok().build();
 
     }
 
     @Override
-    public ResponseEntity<RentRequestResponse> getRentRequest(Long id) {
+    public ResponseEntity<RentRequestResponse> getRentRequest(Long userId, Long id) {
+        var user = userService.getUserById(userId);
+        if(!user.getRole().equals(Role.CLIENT) || !user.getRole().equals(Role.AGENT)){
+            throw new UnauthorizedException("Usuário não pode buscar o pedido de aluguel");
+        }
         var rentRequest = rentRequestService.getRentRequestById(id);
         return ResponseEntity.ok().body(rentRequestMapper.toResponse(rentRequest));
 
     }
 
     @Override
-    public ResponseEntity<RentRequestResponse> updateRentRequest(Long id, RentRequestUpdate rentRequestUpdate) {
+    public ResponseEntity<RentRequestResponse> updateRentRequest(Long userId, Long id, RentRequestUpdate rentRequestUpdate) {
+        var user = userService.getUserById(userId);
+        if(!user.getRole().equals(Role.CLIENT) || !user.getRole().equals(Role.AGENT)){
+            throw new UnauthorizedException("Usuário não pode modificar o pedido de aluguel");
+        }
         var automobileRetrieved = automobileService.getAutomobileById(rentRequestUpdate.getAutomobileId());
         var contractRetrieved = contractService.getContractById(rentRequestUpdate.getContractId());
         var rentRequest = rentRequestService.getRentRequestById(id);
@@ -68,7 +89,12 @@ public class RentRequestController implements PedidosAluguelApi {
     }
 
     @Override
-    public ResponseEntity<RentRequestResponse> updateRentRequestStatus(Long id, RentRequestStatusUpdate rentRequestStatusUpdate) {
+    public ResponseEntity<RentRequestResponse> updateRentRequestStatus(Long userId, Long id, RentRequestStatusUpdate rentRequestStatusUpdate) {
+        var user = userService.getUserById(userId);
+        if(!user.getRole().equals(Role.AGENT)){
+            throw new UnauthorizedException("Usuário não pode modificar status do pedido de aluguel");
+        }
+
         var rentRequest = rentRequestService.getRentRequestById(id);
         Executed mappedStatus = mapStatusEnum(rentRequestStatusUpdate.getStatus());
 
@@ -90,4 +116,5 @@ public class RentRequestController implements PedidosAluguelApi {
             default -> throw new IllegalArgumentException("Status não reconhecido: " + statusEnum);
         };
     }
+
 }
