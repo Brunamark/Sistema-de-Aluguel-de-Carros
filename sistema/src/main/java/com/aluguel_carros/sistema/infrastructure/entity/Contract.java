@@ -4,7 +4,9 @@ import com.aluguel_carros.sistema.domain.enums.ContractType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
@@ -12,6 +14,8 @@ import java.util.UUID;
 @Table(name="contract")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Contract {
 
     @Id

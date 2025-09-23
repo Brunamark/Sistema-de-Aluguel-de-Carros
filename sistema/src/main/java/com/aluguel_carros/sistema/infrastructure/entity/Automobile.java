@@ -2,7 +2,9 @@ package com.aluguel_carros.sistema.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.UUID;
@@ -11,6 +13,8 @@ import java.util.UUID;
 @Table(name="automobile")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Automobile {
 
     @Id

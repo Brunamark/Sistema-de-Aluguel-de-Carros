@@ -9,9 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface RentRequestRepository extends CrudRepository<RentRequest, Long> {
-    @Override
-    Optional<RentRequest> save(RentRequest rentRequest);
-
 
 
 }

@@ -176,9 +176,11 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>9.8.1</version>
                 <configuration>
-                    <url>jdbc:postgresql://localhost:5433/sistemaalugueel</url>
+                    <url>jdbc:postgresql://localhost:5433/sistemaaluguel</url>
                     <user>postgres</user>
                     <password>postgres</password>
+                    <cleanDisabled>false</cleanDisabled>
+                    <baselineOnMigrate>true</baselineOnMigrate>
                     <locations>
                         <location>classpath:db/migration</location>
                     </locations>
