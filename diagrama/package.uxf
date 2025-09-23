@@ -1,22 +1,12 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>480</x><y>20</y><w>140</w><h>70</h></coordinates><panel_attributes>Domain
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLPackage</id><coordinates><x>490</x><y>100</y><w>140</w><h>70</h></coordinates><panel_attributes>Domain
 --
-+model
-+enum
-bg=gray
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>10</x><y>0</y><w>140</w><h>70</h></coordinates><panel_attributes>Infrastructure
---
-+repository
 
-bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>0</x><y>240</y><w>140</w><h>70</h></coordinates><panel_attributes>Application
+bg=gray
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>20</x><y>90</y><w>140</w><h>70</h></coordinates><panel_attributes>Infrastructure
 --
-+service
-+dto
-+mapper
-bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>480</x><y>240</y><w>140</w><h>70</h></coordinates><panel_attributes>Presentation
---
-+controller
-bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>480</x><y>440</y><w>140</w><h>70</h></coordinates><panel_attributes>Resources
+
+bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>220</x><y>450</y><w>140</w><h>70</h></coordinates><panel_attributes>Resources
 --
 +swagger
 
-bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>280</y><w>370</w><h>30</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;350;10</additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>60</y><w>30</w><h>220</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>80</y><w>450</w><h>200</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>430;10;430;110;10;110;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>300</y><w>30</w><h>180</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element></diagram>
+bg=gray</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>150</y><w>450</w><h>150</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>430;20;430;130;10;130;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>150</y><w>270</w><h>340</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;10;240;250;240;250;320</additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>130</y><w>360</w><h>30</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;10;340;10</additional_attributes></element></diagram>
