@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.6</version>
+        <version>3.1.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.aluguel_carros</groupId>
@@ -13,30 +13,16 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>sistema</name>
     <description>Demo project for Spring Boot</description>
-    <url/>
-    <licenses>
-        <license/>
-    </licenses>
-    <developers>
-        <developer/>
-    </developers>
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
     </properties>
     <dependencies>
+        <!-- REMOVA a versão específica aqui -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>3.2.1</version>
         </dependency>
 
         <dependency>
@@ -47,7 +33,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.3.0</version>
+            <version>2.4.0</version>
         </dependency>
 
         <dependency>
@@ -74,14 +60,13 @@
             <scope>test</scope>
         </dependency>
 
-
-
-        <dependency>
+        <!-- REMOVA esta dependência explícita, Spring Boot já a gerencia -->
+        <!-- <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency> -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -144,7 +129,6 @@
                             <version>1.5.5.Final</version>
                         </path>
                     </annotationProcessorPaths>
-
                 </configuration>
             </plugin>
             <plugin>
@@ -212,18 +196,15 @@
                                 <useJakartaEe>true</useJakartaEe>
                                 <interfaceOnly>true</interfaceOnly>
                                 <useTags>true</useTags>
-                                <useJakartaEe>true</useJakartaEe>
                                 <delegatePattern>false</delegatePattern>
                                 <skipDefaultInterface>true</skipDefaultInterface>
                             </configOptions>
                             <typeMappings>
-                                <typeMapping>ResponseEntity=HttpResponse</typeMapping>
+                                <typeMapping>ResponseEntity=ResponseEntity</typeMapping>
                             </typeMappings>
                             <importMappings>
-                                <importMapping>HttpResponse=org.springframework.http.HttpResponse</importMapping>
+                                <importMapping>ResponseEntity=org.springframework.http.ResponseEntity</importMapping>
                             </importMappings>
-
-
                         </configuration>
                     </execution>
                 </executions>
@@ -254,5 +235,4 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-
 </project>
