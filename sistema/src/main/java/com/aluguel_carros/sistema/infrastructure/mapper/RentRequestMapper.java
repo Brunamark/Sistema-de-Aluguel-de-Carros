@@ -5,29 +5,28 @@ import com.aluguel_carros.sistema.infrastructure.entity.Contract;
 import com.aluguel_carros.sistema.infrastructure.entity.RentRequest;
 import com.aluguel_carros.sistema.infrastructure.entity.User;
 import com.sistema_aluguel.model.RentRequestResponse;
+import com.sistema_aluguel.model.RentRequestStatusResponse;
+import com.sistema_aluguel.model.RentRequestStatusUpdate;
+import com.sistema_aluguel.model.RentRequestUpdate;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 
 @Mapper(componentModel = "spring")
 public interface RentRequestMapper {
-    @Mapping(target = "user", source = "userId", qualifiedByName = "toUser")
     @Mapping(target = "contract", source = "contractId", qualifiedByName = "toContract")
     @Mapping(target = "automobile", source = "automobileId", qualifiedByName = "toAutomobile")
     RentRequest toDomain(com.sistema_aluguel.model.RentRequest rentRequestModel);
 
+    @Mapping(target = "contract", source = "contractId", qualifiedByName = "toContract")
+    @Mapping(target = "automobile", source = "automobileId", qualifiedByName = "toAutomobile")
+    RentRequest toDomain(RentRequestUpdate rentRequestUpdate);
+
+    RentRequestStatusResponse toStatusResponse(RentRequest rentRequest);
+
 
     RentRequestResponse toResponse(RentRequest rentRequest);
 
-    @Named("toUser")
-    default User toUser(Long userId) {
-        if (userId == null) {
-            return null;
-        }
-        User user = new User();
-        user.setId(userId);
-        return user;
-    }
 
     @Named("toContract")
     default Contract toContract(Long contractId) {

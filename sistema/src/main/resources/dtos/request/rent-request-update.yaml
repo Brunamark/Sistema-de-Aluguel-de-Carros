@@ -8,7 +8,6 @@ components:
           - price
           - startDate
           - endDate
-          - executed
           - requestType
       properties:
           contractId:

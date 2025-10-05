@@ -3,6 +3,7 @@ package com.aluguel_carros.sistema.infrastructure.entity;
 import com.aluguel_carros.sistema.domain.enums.ContractType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +20,7 @@ import java.util.UUID;
 public class Contract {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.SEQUENCE)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Min(0)
@@ -30,9 +31,6 @@ public class Contract {
     @Column(nullable = false)
     private ContractType contractType;
 
-    @OneToOne
-    @JoinColumn(name = "rent_request_id")
-    private RentRequest rentRequest;
 
 
 }

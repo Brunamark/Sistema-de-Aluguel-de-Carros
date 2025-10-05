@@ -18,7 +18,7 @@ import java.util.UUID;
 public class Automobile {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.SEQUENCE)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
     @OneToMany(mappedBy = "automobile")

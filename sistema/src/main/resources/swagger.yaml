@@ -25,7 +25,7 @@ paths:
               $ref: './dtos/request/rent-request.yaml#/components/schemas/RentRequest'
       responses:
         '201':
-          description: Car was created
+          description: Rent request was created
           content:
             application/json:
               schema:
@@ -180,3 +180,37 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
+  /rent-request-status/{userId}/{id}:
+    get:
+      tags:
+        - PedidosAluguel
+      operationId: getRentRequestStatus
+      summary: Get a rent request status by ID
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: ID do usuário que está criando a solicitação
+          schema:
+            type: integer
+            format: int64
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: './dtos/response/rent-request-status.yaml#/components/schemas/RentRequestStatusResponse'
+        '404':
+          description: Rent request not found
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+

@@ -3,7 +3,6 @@ components:
     RentRequest:
       type: object
       required:
-        - userId
         - contractId
         - automobileId
         - price
@@ -11,9 +10,6 @@ components:
         - endDate
         - requestType
       properties:
-        userId:
-          type: integer
-          format: int64
         contractId:
           type: integer
           format: int64

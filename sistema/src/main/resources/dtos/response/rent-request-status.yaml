@@ -1,0 +1,9 @@
+components:
+  schemas:
+    RentRequestStatusResponse:
+      type: object
+      properties:
+        executed:
+          type: string
+          enum: [PENDING, EVALUATED, REJECTED, APPROVED]
+          description: "Status atual da solicitação"

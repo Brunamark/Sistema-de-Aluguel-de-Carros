@@ -21,7 +21,7 @@ import java.time.LocalDate;
 public class RentRequest {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.SEQUENCE)
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -29,7 +29,8 @@ public class RentRequest {
     @NotNull
     private User user;
 
-    @OneToOne(mappedBy = "rentRequest")
+    @ManyToOne
+    @JoinColumn(name = "contract_id")
     @NotNull
     private Contract contract;
 
